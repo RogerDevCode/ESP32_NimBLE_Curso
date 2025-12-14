@@ -1,0 +1,100 @@
+# ESP-IDF Build Outputs
+build/
+managed_components/
+dependencies/
+
+# ESP-IDF and PlatformIO
+.vscode/
+*.pioenvs/
+*.piolibdeps/
+.clang_complete
+.gcc-flags.json
+
+# Flash and Bootloader
+*.bin
+*.elf
+*.map
+*.hex
+*.uf2
+*.bin.o
+
+# Logs and Temporary Files
+*.log
+*.tmp
+*~
+.DS_Store
+Thumbs.db
+
+# IDE and Editor Files
+*.swp
+*.swo
+*~
+.idea/
+*.sublime-*
+
+# Debug and Profiling
+*.profraw
+*.profdata
+
+# Python and Toolchain
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+
+# Configuration Files (keep sdkconfig.defaults, ignore sdkconfig)
+sdkconfig
+sdkconfig.old
+config/
+
+# NVS Partition
+nvs.bin
+ota_data_initial.bin
+partitions_singleapp.bin
+bootloader.bin
+
+# Test Outputs
+test_results/
+coverage/
+*.gcov
+*.gcda
+*.gcno
+
+# Documentation Build
+docs/_build/
+doxygen/
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# JTAG/Debugging
+*.gdb
+*.gdbinit
+
+# Wi-Fi and Bluetooth Credentials
+credentials.h
+secrets.h
+wifi_config.h
+
+# Hardware Abstraction Layer
+hal/
+
+# Local modifications
+local/
+user_config/
+
+# Backup Files
+*.bak
+*.orig
+*.rej
+~$*
+
+# Lock Files
+*.lock

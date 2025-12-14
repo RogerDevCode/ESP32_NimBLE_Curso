@@ -1,0 +1,2 @@
+dependencies:
+  espressif/ble: "^1.4.0"
