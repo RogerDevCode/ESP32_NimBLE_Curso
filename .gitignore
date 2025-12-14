@@ -1,7 +1,6 @@
 # ---------------------------------
 # 1. ESP-IDF Build System (CRITICO)
 # ---------------------------------
-# La carpeta donde ocurre toda la magia (y el desorden)
 /build/
 /managed_components/
 /dependencies.lock
@@ -9,17 +8,12 @@
 # ---------------------------------
 # 2. Configuración y Secretos (SEGURIDAD)
 # ---------------------------------
-# Ignorar cualquier archivo sdkconfig...
 sdkconfig
 sdkconfig.old
 sdkconfig.ci
 sdkconfig.debug
 sdkconfig.release
-
-# ...PERO permitir explícitamente el archivo de arquitectura base
 !sdkconfig.defaults
-
-# Bloquear certificados y llaves privadas (Por si acaso bajas alguno)
 *.pem
 *.key
 *.crt
@@ -47,8 +41,4 @@ __pycache__/
 # ---------------------------------
 /docs/_build/
 core.*
-<<<<<<< HEAD
 *.log
-=======
-*.log
->>>>>>> master
