@@ -1,0 +1,62 @@
+Command: ninja flash
+[1/5] cd /home/manager/Sync/ESP32-projects/ESP32_NimBLE_Curso/7_ble_server_notify/build/esp-idf/esptool_py && /home/manager/.espressif/python_env/idf5.5_py3.13_env/bin/python /home/manager/esp/v5.5.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/manager/Sync/ESP32-projects/ESP32_NimBLE_Curso/7_ble_server_notify/build/partition_table/partition-table.bin /home/manager/Sync/ESP32-projects/ESP32_NimBLE_Curso/7_ble_server_notify/build/7_ble_server_notify.bin
+7_ble_server_notify.bin binary size 0x7fc40 bytes. Smallest app partition is 0x100000 bytes. 0x803c0 bytes (50%) free.
+[2/5] Performing build step for 'bootloader'
+[1/1] cd /home/manager/Sync/ESP32-projects/ESP32_NimBLE_Curso/7_ble_server_notify/build/bootloader/esp-idf/esptool_py && /home/manager/.espressif/python_env/idf5.5_py3.13_env/bin/python /home/manager/esp/v5.5.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/manager/Sync/ESP32-projects/ESP32_NimBLE_Curso/7_ble_server_notify/build/bootloader/bootloader.bin
+Bootloader binary size 0x6680 bytes. 0x980 bytes (8%) free.
+[3/5] No install step for 'bootloader'
+[4/5] Completed 'bootloader'
+[4/5] cd /home/manager/esp/v5.5.1/esp-idf/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/home/manager/esp/v5.5.1/esp-idf -D "SERIAL_TOOL=/home/manager/.espressif/python_env/idf5.5_py3.13_env/bin/python;;/home/manager/esp/v5.5.1/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/manager/Sync/ESP32-projects/ESP32_NimBLE_Curso/7_ble_server_notify/build -P /home/manager/esp/v5.5.1/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32 -p /dev/ttyUSB0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 7_ble_server_notify.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.11.dev1
+Serial port /dev/ttyUSB0
+Connecting.......
+Chip is ESP32-D0WD-V3 (revision v3.1)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: 88:13:bf:23:a5:ac
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x0008ffff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 26240 bytes to 16493...
+Writing at 0x00001000... (50 %)
+Writing at 0x000075ef... (100 %)
+Wrote 26240 bytes (16493 compressed) at 0x00001000 in 0.7 seconds (effective 302.4 kbit/s)...
+Hash of data verified.
+Compressed 523328 bytes to 313369...
+Writing at 0x00010000... (5 %)
+Writing at 0x0001be26... (10 %)
+Writing at 0x00026508... (15 %)
+Writing at 0x0002c562... (20 %)
+Writing at 0x00031dba... (25 %)
+Writing at 0x0003798e... (30 %)
+Writing at 0x0003de2a... (35 %)
+Writing at 0x00043acc... (40 %)
+Writing at 0x00049819... (45 %)
+Writing at 0x0004f457... (50 %)
+Writing at 0x00055c5a... (55 %)
+Writing at 0x0005bc19... (60 %)
+Writing at 0x00061453... (65 %)
+Writing at 0x00066f5c... (70 %)
+Writing at 0x0006c9c7... (75 %)
+Writing at 0x000737e5... (80 %)
+Writing at 0x0007d2d7... (85 %)
+Writing at 0x00082e7b... (90 %)
+Writing at 0x00088aa3... (95 %)
+Writing at 0x0008ed4e... (100 %)
+Wrote 523328 bytes (313369 compressed) at 0x00010000 in 7.2 seconds (effective 581.8 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.0 seconds (effective 564.1 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

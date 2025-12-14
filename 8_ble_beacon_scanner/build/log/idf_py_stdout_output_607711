@@ -1,0 +1,2762 @@
+Command: /home/manager/.espressif/python_env/idf5.5_py3.13_env/bin/python /home/manager/esp/v5.5.1/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/manager/Sync/ESP32-projects/ESP32_NimBLE_Curso/8_ble_beacon_scanner/build/ble_safety_scanner.elf /home/manager/Sync/ESP32-projects/ESP32_NimBLE_Curso/8_ble_beacon_scanner/build/bootloader/bootloader.elf -m '/home/manager/.espressif/python_env/idf5.5_py3.13_env/bin/python' '/home/manager/esp/v5.5.1/esp-idf/tools/idf.py' '-p' '/dev/ttyUSB0'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:5280
+load:0x40078000,len:15672
+load:0x40080400,len:3788
+entry 0x40080620
+[0;32mI (27) boot: ESP-IDF v5.5.1-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Dec 12 2025 20:08:18[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v3.1[0m
+[0;32mI (32) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (36) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ab04h ( 43780) map[0m
+[0;32mI (102) esp_image: segment 1: paddr=0001ab2c vaddr=3ffbdb60 size=041d4h ( 16852) load[0m
+[0;32mI (108) esp_image: segment 2: paddr=0001ed08 vaddr=40080000 size=01310h (  4880) load[0m
+[0;32mI (110) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=4a7f0h (305136) map[0m
+[0;32mI (217) esp_image: segment 4: paddr=0006a818 vaddr=40081310 size=13ff4h ( 81908) load[0m
+[0;32mI (249) esp_image: segment 5: paddr=0007e814 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (260) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (260) boot: Disabling RNG early entropy source...[0m
+[0;32mI (270) cpu_start: Multicore app[0m
+[0;32mI (278) cpu_start: Pro cpu start user code[0m
+[0;32mI (278) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (278) app_init: Application information:[0m
+[0;32mI (279) app_init: Project name:     ble_safety_scanner[0m
+[0;32mI (283) app_init: App version:      1[0m
+[0;32mI (287) app_init: Compile time:     Dec 12 2025 20:07:58[0m
+[0;32mI (292) app_init: ELF file SHA256:  49648ad9d...[0m
+[0;32mI (296) app_init: ESP-IDF:          v5.5.1-dirty[0m
+[0;32mI (300) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (304) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (308) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (312) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (318) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (323) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (329) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (334) heap_init: At 3FFC4950 len 0001B6B0 (109 KiB): DRAM[0m
+[0;32mI (339) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (344) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (350) heap_init: At 40095304 len 0000ACFC (43 KiB): IRAM[0m
+[0;32mI (357) spi_flash: detected chip: generic[0m
+[0;32mI (359) spi_flash: flash io: dio[0m
+[0;33mW (362) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (375) coexist: coex firmware version: b0bcc39[0m
+[0;32mI (379) main_task: Started on CPU0[0m
+[0;32mI (389) main_task: Calling app_main()[0m
+[0;32mI (389) SAFE_SCANNER: === SAFETY CRITICAL BEACON SCANNER ===[0m
+[0;32mI (399) BTDM_INIT: BT controller compile version [722c907][0m
+[0;32mI (399) BTDM_INIT: Using main XTAL as clock source[0m
+[0;32mI (399) BTDM_INIT: Bluetooth MAC: cc:7b:5c:f2:12:ca[0m
+[0;32mI (409) phy_init: phy_version 4861,b71b5ad,Aug  5 2025,11:16:06[0m
+[0;32mI (489) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (759) main_task: Returned from app_main()[0m
+[0;32mI (789) NimBLE: Failed to restore IRKs from store; status=8[0m
+
+[0;32mI (789) NimBLE: GAP procedure initiated: discovery; [0m
+[0;32mI (789) NimBLE: own_addr_type=0 filter_policy=0 passive=1 limited=0 filter_duplicates=1 [0m
+[0;32mI (799) NimBLE: duration=forever[0m
+[0;32mI (799) NimBLE: [0m
+
+[0;32mI (809) SAFE_SCANNER: Scanner started (RSSI Threshold: -85 dBm)[0m
+[1;31mE (5759) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (5759) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (5759) task_wdt: Tasks currently running:[0m
+[1;31mE (5759) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (5759) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (5759) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (5759) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;32mI (10759) SAFE_SCANNER: Status: Scanning active. Total packets: 2[0m
+[1;31mE (15759) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (15759) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (15759) task_wdt: Tasks currently running:[0m
+[1;31mE (15759) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (15759) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (15759) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (15759) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (20759) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. CheE (20759) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (20759) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (20759) task_wdt: Tasks currently running:[0m
+[1;31mE (20759) task_wdt: CPU 0: monitor[0m
+[1;31mE (20759) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (20759) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D31:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (20759) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+k Antenna/Environment.
+[1;31mE (25829) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (25829) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (25829) task_wdt: Tasks currently running:[0m
+[1;31mE (25829) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (25829) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (25829) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (25829) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (30829) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (35829) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (35829) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (35829) task_wdt: Tasks currently running:[0m
+[1;31mE (35829) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (35829) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (35829) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (35829) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (40829) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. CheE (40829) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (40829) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (40829) task_wdt: Tasks currently running:[0m
+[1;31mE (40829) task_wdt: CPU 0: monitor[0m
+[1;31mE (40829) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (40829) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D31:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (40829) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+k Antenna/Environment.
+[1;31mE (45899) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (45899) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (45899) task_wdt: Tasks currently running:[0m
+[1;31mE (45899) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (45899) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (45899) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (45899) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (50899) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (55899) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (55899) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (55899) task_wdt: Tasks currently running:[0m
+[1;31mE (55899) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (55899) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (55899) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (55899) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (60899) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. CheE (60899) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (60899) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (60899) task_wdt: Tasks currently running:[0m
+[1;31mE (60899) task_wdt: CPU 0: monitor[0m
+[1;31mE (60899) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (60899) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D25:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (60899) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+ck Antenna/Environment.
+[1;31mE (65969) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (65969) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (65969) task_wdt: Tasks currently running:[0m
+[1;31mE (65969) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (65969) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (65969) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (65969) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (70969) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (75969) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (75969) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (75969) task_wdt: Tasks currently running:[0m
+[1;31mE (75969) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (75969) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (75969) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (75969) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (80969) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. CheE (80969) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (80969) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (80969) task_wdt: Tasks currently running:[0m
+[1;31mE (80969) task_wdt: CPU 0: monitor[0m
+[1;31mE (80969) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (80969) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D20:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (80969) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+ck Antenna/Environment.
+[1;31mE (86039) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (86039) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (86039) task_wdt: Tasks currently running:[0m
+[1;31mE (86039) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (86039) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (86039) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (86039) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (91039) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (96039) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (96039) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (96039) task_wdt: Tasks currently running:[0m
+[1;31mE (96039) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (96039) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (96039) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (96039) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (101039) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. E (101039) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (101039) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (101039) task_wdt: Tasks currently running:[0m
+[1;31mE (101039) task_wdt: CPU 0: monitor[0m
+[1;31mE (101039) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (101039) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D5D:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (101039) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+Check Antenna/Environment.
+[1;31mE (106109) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (106109) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (106109) task_wdt: Tasks currently running:[0m
+[1;31mE (106109) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (106109) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (106109) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (106109) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (111109) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (116109) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (116109) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (116109) task_wdt: Tasks currently running:[0m
+[1;31mE (116109) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (116109) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (116109) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (116109) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (121109) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. E (121109) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (121109) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (121109) task_wdt: Tasks currently running:[0m
+[1;31mE (121109) task_wdt: CPU 0: monitor[0m
+[1;31mE (121109) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (121109) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D5D:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (121109) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+Check Antenna/Environment.
+[1;31mE (126179) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (126179) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (126179) task_wdt: Tasks currently running:[0m
+[1;31mE (126179) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (126179) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (126179) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (126179) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (131179) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (136179) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (136179) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (136179) task_wdt: Tasks currently running:[0m
+[1;31mE (136179) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (136179) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (136179) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (136179) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (141179) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. E (141179) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (141179) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (141179) task_wdt: Tasks currently running:[0m
+[1;31mE (141179) task_wdt: CPU 0: monitor[0m
+[1;31mE (141179) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (141179) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D5D:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (141179) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+Check Antenna/Environment.
+[1;31mE (146249) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (146249) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (146249) task_wdt: Tasks currently running:[0m
+[1;31mE (146249) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (146249) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (146249) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (146249) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (151249) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (156249) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (156249) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (156249) task_wdt: Tasks currently running:[0m
+[1;31mE (156249) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (156249) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (156249) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (156249) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (161249) SAFE_SCANNER: WARNING: No BLE packets received in lE (161249) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (161249) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (161249) task_wdt: Tasks currently running:[0m
+[1;31mE (161249) task_wdt: CPU 0: monitor[0m
+[1;31mE (161249) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (161249) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D4789:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (161249) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+ast 10s. Check Antenna/Environment.
+[1;31mE (166319) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (166319) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (166319) task_wdt: Tasks currently running:[0m
+[1;31mE (166319) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (166319) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (166319) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (166319) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (171319) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (176319) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (176319) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (176319) task_wdt: Tasks currently running:[0m
+[1;31mE (176319) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (176319) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (176319) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (176319) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (181319) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. E (181319) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (181319) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (181319) task_wdt: Tasks currently running:[0m
+[1;31mE (181319) task_wdt: CPU 0: monitor[0m
+[1;31mE (181319) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (181319) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D5D:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (181319) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+Check Antenna/Environment.
+[1;31mE (186389) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (186389) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (186389) task_wdt: Tasks currently running:[0m
+[1;31mE (186389) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (186389) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (186389) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (186389) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (191389) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (196389) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (196389) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (196389) task_wdt: Tasks currently running:[0m
+[1;31mE (196389) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (196389) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (196389) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (196389) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (201389) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. E (201389) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (201389) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (201389) task_wdt: Tasks currently running:[0m
+[1;31mE (201389) task_wdt: CPU 0: monitor[0m
+[1;31mE (201389) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (201389) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D5D:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (201389) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+Check Antenna/Environment.
+[1;31mE (206459) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (206459) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (206459) task_wdt: Tasks currently running:[0m
+[1;31mE (206459) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (206459) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (206459) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (206459) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (211459) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (216459) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (216459) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (216459) task_wdt: Tasks currently running:[0m
+[1;31mE (216459) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (216459) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (216459) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (216459) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (221459) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. E (221459) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (221459) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (221459) task_wdt: Tasks currently running:[0m
+[1;31mE (221459) task_wdt: CPU 0: monitor[0m
+[1;31mE (221459) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (221459) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D5D:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (221459) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+Check Antenna/Environment.
+[1;31mE (226529) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (226529) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (226529) task_wdt: Tasks currently running:[0m
+[1;31mE (226529) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (226529) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (226529) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (226529) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (231529) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (236529) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (236529) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (236529) task_wdt: Tasks currently running:[0m
+[1;31mE (236529) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (236529) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (236529) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (236529) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (241529) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. E (241529) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (241529) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (241529) task_wdt: Tasks currently running:[0m
+[1;31mE (241529) task_wdt: CPU 0: monitor[0m
+[1;31mE (241529) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (241529) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D5D:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (241529) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+Check Antenna/Environment.
+[1;31mE (246599) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (246599) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (246599) task_wdt: Tasks currently running:[0m
+[1;31mE (246599) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (246599) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (246599) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (246599) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (251599) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (256599) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (256599) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (256599) task_wdt: Tasks currently running:[0m
+[1;31mE (256599) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (256599) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (256599) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (256599) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (261599) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. E (261599) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (261599) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (261599) task_wdt: Tasks currently running:[0m
+[1;31mE (261599) task_wdt: CPU 0: monitor[0m
+[1;31mE (261599) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (261599) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D5D:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (261599) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+Check Antenna/Environment.
+[1;31mE (266669) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (266669) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (266669) task_wdt: Tasks currently running:[0m
+[1;31mE (266669) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (266669) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (266669) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (266669) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (271669) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (276669) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (276669) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (276669) task_wdt: Tasks currently running:[0m
+[1;31mE (276669) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (276669) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (276669) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (276669) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (281669) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. E (281669) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (281669) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (281669) task_wdt: Tasks currently running:[0m
+[1;31mE (281669) task_wdt: CPU 0: monitor[0m
+[1;31mE (281669) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (281669) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D5D:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (281669) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+Check Antenna/Environment.
+[1;31mE (286739) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (286739) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (286739) task_wdt: Tasks currently running:[0m
+[1;31mE (286739) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (286739) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (286739) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (286739) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (291739) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (296739) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (296739) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (296739) task_wdt: Tasks currently running:[0m
+[1;31mE (296739) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (296739) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (296739) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (296739) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (301739) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. E (301739) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (301739) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (301739) task_wdt: Tasks currently running:[0m
+[1;31mE (301739) task_wdt: CPU 0: monitor[0m
+[1;31mE (301739) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (301739) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D5D:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (301739) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+Check Antenna/Environment.
+[1;31mE (306809) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (306809) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (306809) task_wdt: Tasks currently running:[0m
+[1;31mE (306809) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (306809) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (306809) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (306809) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (311809) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (316809) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (316809) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (316809) task_wdt: Tasks currently running:[0m
+[1;31mE (316809) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (316809) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (316809) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (316809) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (321809) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. E (321809) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (321809) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (321809) task_wdt: Tasks currently running:[0m
+[1;31mE (321809) task_wdt: CPU 0: monitor[0m
+[1;31mE (321809) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (321809) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D5D:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (321809) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+Check Antenna/Environment.
+[1;31mE (326879) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (326879) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (326879) task_wdt: Tasks currently running:[0m
+[1;31mE (326879) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (326879) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (326879) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (326879) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (331879) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (336879) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (336879) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (336879) task_wdt: Tasks currently running:[0m
+[1;31mE (336879) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (336879) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (336879) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (336879) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (341879) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. E (341879) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (341879) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (341879) task_wdt: Tasks currently running:[0m
+[1;31mE (341879) task_wdt: CPU 0: monitor[0m
+[1;31mE (341879) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (341879) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D5D:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (341879) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+Check Antenna/Environment.
+[1;31mE (346949) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (346949) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (346949) task_wdt: Tasks currently running:[0m
+[1;31mE (346949) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (346949) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (346949) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (346949) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (351949) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (356949) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (356949) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (356949) task_wdt: Tasks currently running:[0m
+[1;31mE (356949) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (356949) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (356949) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (356949) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (361949) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. E (361949) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (361949) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (361949) task_wdt: Tasks currently running:[0m
+[1;31mE (361949) task_wdt: CPU 0: monitor[0m
+[1;31mE (361949) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (361949) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D5D:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (361949) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+Check Antenna/Environment.
+[1;31mE (367019) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (367019) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (367019) task_wdt: Tasks currently running:[0m
+[1;31mE (367019) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (367019) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (367019) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (367019) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (372019) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (377019) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (377019) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (377019) task_wdt: Tasks currently running:[0m
+[1;31mE (377019) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (377019) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (377019) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (377019) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (382019) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. E (382019) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (382019) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (382019) task_wdt: Tasks currently running:[0m
+[1;31mE (382019) task_wdt: CPU 0: monitor[0m
+[1;31mE (382019) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (382019) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D5D:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (382019) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+Check Antenna/Environment.
+[1;31mE (387089) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (387089) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (387089) task_wdt: Tasks currently running:[0m
+[1;31mE (387089) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (387089) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (387089) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (387089) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (392089) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (397089) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (397089) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (397089) task_wdt: Tasks currently running:[0m
+[1;31mE (397089) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (397089) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (397089) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (397089) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (402089) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. E (402089) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (402089) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (402089) task_wdt: Tasks currently running:[0m
+[1;31mE (402089) task_wdt: CPU 0: monitor[0m
+[1;31mE (402089) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (402089) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D5D:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (402089) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+Check Antenna/Environment.
+[1;31mE (407159) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (407159) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (407159) task_wdt: Tasks currently running:[0m
+[1;31mE (407159) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (407159) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (407159) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (407159) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (412159) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (417159) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (417159) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (417159) task_wdt: Tasks currently running:[0m
+[1;31mE (417159) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (417159) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (417159) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (417159) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[1;31mE (422159) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (422159) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (422159) task_wdt: Tasks currently running:[0m
+[1;31mE (422159) task_wdt: CPU 0: monitor[0m
+[1;31mE (422159) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (422159) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D51D9:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (422159) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (422159) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (427219) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (427219) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (427219) task_wdt: Tasks currently running:[0m
+[1;31mE (427219) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (427219) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (427219) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (427219) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (432219) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (437219) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (437219) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (437219) task_wdt: Tasks currently running:[0m
+[1;31mE (437219) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (437219) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (437219) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (437219) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (442219) SAFE_SCANNER: WARNING: No BLE packets received in last 10s.E (442219) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (442219) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (442219) task_wdt: Tasks currently running:[0m
+[1;31mE (442219) task_wdt: CPU 0: monitor[0m
+[1;31mE (442219) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (442219) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D3A:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (442219) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+Check Antenna/Environment.
+[1;31mE (447289) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (447289) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (447289) task_wdt: Tasks currently running:[0m
+[1;31mE (447289) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (447289) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (447289) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (447289) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (452289) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (457289) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (457289) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (457289) task_wdt: Tasks currently running:[0m
+[1;31mE (457289) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (457289) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (457289) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (457289) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (462289) SAFE_SCANNER: WARNING: No BLE packets received in last 10s.E (462289) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (462289) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (462289) task_wdt: Tasks currently running:[0m
+[1;31mE (462289) task_wdt: CPU 0: monitor[0m
+[1;31mE (462289) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (462289) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D3A:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (462289) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+Check Antenna/Environment.
+[1;31mE (467359) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (467359) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (467359) task_wdt: Tasks currently running:[0m
+[1;31mE (467359) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (467359) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (467359) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (467359) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (472359) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (477359) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (477359) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (477359) task_wdt: Tasks currently running:[0m
+[1;31mE (477359) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (477359) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (477359) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (477359) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (482359) SAFE_SCANNER: WARNING: No BLE packets received in lE (482359) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (482359) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (482359) task_wdt: Tasks currently running:[0m
+[1;31mE (482359) task_wdt: CPU 0: monitor[0m
+[1;31mE (482359) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (482359) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D4771:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (482359) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+ast 10s. Check Antenna/Environment.
+[1;31mE (487429) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (487429) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (487429) task_wdt: Tasks currently running:[0m
+[1;31mE (487429) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (487429) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (487429) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (487429) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (492429) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (497429) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (497429) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (497429) task_wdt: Tasks currently running:[0m
+[1;31mE (497429) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (497429) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (497429) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (497429) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (502429) SAFE_SCANNER: WARNING: No BLE packets received in last 10s.E (502429) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (502429) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (502429) task_wdt: Tasks currently running:[0m
+[1;31mE (502429) task_wdt: CPU 0: monitor[0m
+[1;31mE (502429) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (502429) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D34:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (502429) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+Check Antenna/Environment.
+[1;31mE (507499) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (507499) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (507499) task_wdt: Tasks currently running:[0m
+[1;31mE (507499) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (507499) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (507499) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (507499) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (512499) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (517499) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (517499) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (517499) task_wdt: Tasks currently running:[0m
+[1;31mE (517499) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (517499) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (517499) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (517499) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (522499) SAFE_SCANNER: WARNING: No BLE packets received in last 10s.E (522499) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (522499) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (522499) task_wdt: Tasks currently running:[0m
+[1;31mE (522499) task_wdt: CPU 0: monitor[0m
+[1;31mE (522499) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (522499) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D3A:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (522499) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+Check Antenna/Environment.
+[1;31mE (527569) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (527569) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (527569) task_wdt: Tasks currently running:[0m
+[1;31mE (527569) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (527569) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (527569) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (527569) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (532569) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (537569) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (537569) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (537569) task_wdt: Tasks currently running:[0m
+[1;31mE (537569) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (537569) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (537569) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (537569) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (542569) SAFE_SCANNER: WARNING: No BLE packets received in last 10s.E (542569) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (542569) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (542569) task_wdt: Tasks currently running:[0m
+[1;31mE (542569) task_wdt: CPU 0: monitor[0m
+[1;31mE (542569) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (542569) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D3A:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (542569) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+Check Antenna/Environment.
+[1;31mE (547639) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (547639) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (547639) task_wdt: Tasks currently running:[0m
+[1;31mE (547639) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (547639) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (547639) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (547639) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (552639) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (557639) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (557639) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (557639) task_wdt: Tasks currently running:[0m
+[1;31mE (557639) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (557639) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (557639) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (557639) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (562639) SAFE_SCANNER: WARNING: No BLE packets received in last 10s.E (562639) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (562639) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (562639) task_wdt: Tasks currently running:[0m
+[1;31mE (562639) task_wdt: CPU 0: monitor[0m
+[1;31mE (562639) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (562639) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D3A:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (562639) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+Check Antenna/Environment.
+[1;31mE (567709) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (567709) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (567709) task_wdt: Tasks currently running:[0m
+[1;31mE (567709) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (567709) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (567709) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (567709) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (572709) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (577709) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (577709) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (577709) task_wdt: Tasks currently running:[0m
+[1;31mE (577709) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (577709) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (577709) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (577709) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (582709) SAFE_SCANNER: WARNING: No BLE packets received in lE (582709) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (582709) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (582709) task_wdt: Tasks currently running:[0m
+[1;31mE (582709) task_wdt: CPU 0: monitor[0m
+[1;31mE (582709) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (582709) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D4771:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (582709) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+ast 10s. Check Antenna/Environment.
+[1;31mE (587779) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (587779) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (587779) task_wdt: Tasks currently running:[0m
+[1;31mE (587779) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (587779) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (587779) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (587779) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (592779) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (597779) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (597779) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (597779) task_wdt: Tasks currently running:[0m
+[1;31mE (597779) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (597779) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (597779) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (597779) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (602779) SAFE_SCANNER: WARNING: No BLE packets received in last 10s.E (602779) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (602779) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (602779) task_wdt: Tasks currently running:[0m
+[1;31mE (602779) task_wdt: CPU 0: monitor[0m
+[1;31mE (602779) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (602779) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D3A:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (602779) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+Check Antenna/Environment.
+[1;31mE (607849) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (607849) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (607849) task_wdt: Tasks currently running:[0m
+[1;31mE (607849) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (607849) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (607849) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (607849) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (612849) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (617849) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (617849) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (617849) task_wdt: Tasks currently running:[0m
+[1;31mE (617849) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (617849) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (617849) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (617849) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (622849) SAFE_SCANNER: WARNING: No BLE packets received in last 10s.E (622849) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (622849) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (622849) task_wdt: Tasks currently running:[0m
+[1;31mE (622849) task_wdt: CPU 0: monitor[0m
+[1;31mE (622849) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (622849) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D3A:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (622849) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+Check Antenna/Environment.
+[1;31mE (627919) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (627919) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (627919) task_wdt: Tasks currently running:[0m
+[1;31mE (627919) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (627919) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (627919) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (627919) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;32mI (632919) SAFE_SCANNER: Status: Scanning active. Total packets: 3[0m
+[1;31mE (637919) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (637919) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (637919) task_wdt: Tasks currently running:[0m
+[1;31mE (637919) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (637919) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (637919) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C3D9:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (637919) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (642919) E (642919) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (642919) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (642919) task_wdt: Tasks currently running:[0m
+[1;31mE (642919) task_wdt: CPU 0: monitor[0m
+[1;31mE (642919) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (642919) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400823F7:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (642919) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.
+[1;31mE (647989) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (647989) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (647989) task_wdt: Tasks currently running:[0m
+[1;31mE (647989) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (647989) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (647989) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (647989) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (652989) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (657989) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (657989) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (657989) task_wdt: Tasks currently running:[0m
+[1;31mE (657989) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (657989) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (657989) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (657989) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (662989) SAFE_SCANNER: WARNING: No BLE packets received in last 10s.E (662989) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (662989) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (662989) task_wdt: Tasks currently running:[0m
+[1;31mE (662989) task_wdt: CPU 0: monitor[0m
+[1;31mE (662989) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (662989) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D2C:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (662989) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+Check Antenna/Environment.
+[1;31mE (668059) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (668059) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (668059) task_wdt: Tasks currently running:[0m
+[1;31mE (668059) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (668059) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (668059) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (668059) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (673059) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (678059) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (678059) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (678059) task_wdt: Tasks currently running:[0m
+[1;31mE (678059) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (678059) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (678059) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (678059) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (683059) SAFE_SCANNER: WARNING: No BLE packets received in last 10s.E (683059) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (683059) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (683059) task_wdt: Tasks currently running:[0m
+[1;31mE (683059) task_wdt: CPU 0: monitor[0m
+[1;31mE (683059) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (683059) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D2C:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (683059) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+Check Antenna/Environment.
+[1;31mE (688129) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (688129) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (688129) task_wdt: Tasks currently running:[0m
+[1;31mE (688129) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (688129) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (688129) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (688129) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (693129) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (698129) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (698129) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (698129) task_wdt: Tasks currently running:[0m
+[1;31mE (698129) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (698129) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (698129) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (698129) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[1;31mE (703129) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (703129) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (703129) task_wdt: Tasks currently running:[0m
+[1;31mE (703129) task_wdt: CPU 0: monitor[0m
+[1;31mE (703129) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (703129) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D572B:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (703129) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (703129) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (708189) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (708189) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (708189) task_wdt: Tasks currently running:[0m
+[1;31mE (708189) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (708189) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (708189) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (708189) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (713189) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (718189) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (718189) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (718189) task_wdt: Tasks currently running:[0m
+[1;31mE (718189) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (718189) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (718189) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (718189) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (723189) SAFE_SCANNER: WARNING: No BLE packets received in last 10s.E (723189) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (723189) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (723189) task_wdt: Tasks currently running:[0m
+[1;31mE (723189) task_wdt: CPU 0: monitor[0m
+[1;31mE (723189) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (723189) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D2C:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (723189) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+Check Antenna/Environment.
+[1;31mE (728259) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (728259) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (728259) task_wdt: Tasks currently running:[0m
+[1;31mE (728259) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (728259) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (728259) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (728259) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (733259) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (738259) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (738259) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (738259) task_wdt: Tasks currently running:[0m
+[1;31mE (738259) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (738259) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (738259) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (738259) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (743259) SAFE_SCANNER: WARNING: No BLE packets received in last 10s.E (743259) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (743259) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (743259) task_wdt: Tasks currently running:[0m
+[1;31mE (743259) task_wdt: CPU 0: monitor[0m
+[1;31mE (743259) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (743259) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D2C:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (743259) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+Check Antenna/Environment.
+[1;31mE (748329) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (748329) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (748329) task_wdt: Tasks currently running:[0m
+[1;31mE (748329) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (748329) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (748329) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (748329) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (753329) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (758329) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (758329) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (758329) task_wdt: Tasks currently running:[0m
+[1;31mE (758329) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (758329) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (758329) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (758329) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (763329) SAFE_SCANNER: WARNING: No BLE packets received in last 10s.E (763329) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (763329) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (763329) task_wdt: Tasks currently running:[0m
+[1;31mE (763329) task_wdt: CPU 0: monitor[0m
+[1;31mE (763329) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (763329) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D2C:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (763329) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+Check Antenna/Environment.
+[1;31mE (768399) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (768399) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (768399) task_wdt: Tasks currently running:[0m
+[1;31mE (768399) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (768399) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (768399) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (768399) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (773399) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (778399) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (778399) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (778399) task_wdt: Tasks currently running:[0m
+[1;31mE (778399) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (778399) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (778399) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (778399) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (783399) SAFE_SCANNER: WARNING: No BLE packets received in last 10s.E (783399) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (783399) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (783399) task_wdt: Tasks currently running:[0m
+[1;31mE (783399) task_wdt: CPU 0: monitor[0m
+[1;31mE (783399) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (783399) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D2C:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (783399) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+Check Antenna/Environment.
+[1;31mE (788469) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (788469) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (788469) task_wdt: Tasks currently running:[0m
+[1;31mE (788469) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (788469) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (788469) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (788469) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (793469) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (798469) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (798469) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (798469) task_wdt: Tasks currently running:[0m
+[1;31mE (798469) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (798469) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (798469) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (798469) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[1;31mE (803469) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (803469) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (803469) task_wdt: Tasks currently running:[0m
+[1;31mE (803469) task_wdt: CPU 0: monitor[0m
+[1;31mE (803469) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (803469) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D51D9:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (803469) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (803469) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (808529) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (808529) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (808529) task_wdt: Tasks currently running:[0m
+[1;31mE (808529) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (808529) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (808529) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (808529) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (813529) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (818529) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (818529) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (818529) task_wdt: Tasks currently running:[0m
+[1;31mE (818529) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (818529) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (818529) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (818529) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (823529) SAFE_SCANNER: WARNING: No BLE packets received in last 10s.E (823529) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (823529) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (823529) task_wdt: Tasks currently running:[0m
+[1;31mE (823529) task_wdt: CPU 0: monitor[0m
+[1;31mE (823529) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (823529) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D2C:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (823529) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+Check Antenna/Environment.
+[1;31mE (828599) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (828599) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (828599) task_wdt: Tasks currently running:[0m
+[1;31mE (828599) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (828599) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (828599) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (828599) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (833599) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (838599) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (838599) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (838599) task_wdt: Tasks currently running:[0m
+[1;31mE (838599) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (838599) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (838599) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (838599) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (843599) SAFE_SCANNER: WARNING: No BLE packets received in lE (843599) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (843599) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (843599) task_wdt: Tasks currently running:[0m
+[1;31mE (843599) task_wdt: CPU 0: monitor[0m
+[1;31mE (843599) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (843599) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (843599) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+ast 10s. Check Antenna/Environment.
+[1;31mE (848669) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (848669) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (848669) task_wdt: Tasks currently running:[0m
+[1;31mE (848669) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (848669) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (848669) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (848669) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (853669) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (858669) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (858669) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (858669) task_wdt: Tasks currently running:[0m
+[1;31mE (858669) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (858669) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (858669) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (858669) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (863669) SAFE_SCANNER: WARNING: No BLE packets received in last 10s.E (863669) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (863669) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (863669) task_wdt: Tasks currently running:[0m
+[1;31mE (863669) task_wdt: CPU 0: monitor[0m
+[1;31mE (863669) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (863669) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D2C:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (863669) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+Check Antenna/Environment.
+[1;31mE (868739) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (868739) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (868739) task_wdt: Tasks currently running:[0m
+[1;31mE (868739) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (868739) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (868739) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (868739) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (873739) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (878739) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (878739) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (878739) task_wdt: Tasks currently running:[0m
+[1;31mE (878739) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (878739) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (878739) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (878739) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (883739) SAFE_SCANNER: WARNING: No BLE packets received in lE (883739) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (883739) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (883739) task_wdt: Tasks currently running:[0m
+[1;31mE (883739) task_wdt: CPU 0: monitor[0m
+[1;31mE (883739) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (883739) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (883739) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+ast 10s. Check Antenna/Environment.
+[1;31mE (888809) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (888809) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (888809) task_wdt: Tasks currently running:[0m
+[1;31mE (888809) task_wdt: CPU 0: btController[0m
+[1;31mE (888809) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (888809) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4000BFED:0x3FFC5B90 0x4008E643:0x3FFC5BA0 0x4008E21B:0x3FFC5BC0 0x400DF400:0x3FFC5C00 0x400FCF26:0x3FFC5C20
+
+[1;31mE (888809) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (893809) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (898809) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (898809) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (898809) task_wdt: Tasks currently running:[0m
+[1;31mE (898809) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (898809) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (898809) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (898809) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (903809) SAFE_SCANNER: WARNING: No BLE packets received in last 10s.E (903809) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (903809) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (903809) task_wdt: Tasks currently running:[0m
+[1;31mE (903809) task_wdt: CPU 0: monitor[0m
+[1;31mE (903809) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (903809) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D2C:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (903809) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+Check Antenna/Environment.
+[1;31mE (908879) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (908879) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (908879) task_wdt: Tasks currently running:[0m
+[1;31mE (908879) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (908879) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (908879) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (908879) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (913879) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (918879) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (918879) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (918879) task_wdt: Tasks currently running:[0m
+[1;31mE (918879) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (918879) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (918879) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (918879) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (923879) SAFE_SCANNER: WARNING: No BLE packets received in last 10s.E (923879) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (923879) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (923879) task_wdt: Tasks currently running:[0m
+[1;31mE (923879) task_wdt: CPU 0: monitor[0m
+[1;31mE (923879) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (923879) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D2C:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (923879) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+Check Antenna/Environment.
+[1;31mE (928949) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (928949) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (928949) task_wdt: Tasks currently running:[0m
+[1;31mE (928949) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (928949) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (928949) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (928949) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (933949) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (938949) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (938949) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (938949) task_wdt: Tasks currently running:[0m
+[1;31mE (938949) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (938949) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (938949) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (938949) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (943949) SAFE_SCANNER: WARNING: No BLE packets received in last 10s.E (943949) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (943949) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (943949) task_wdt: Tasks currently running:[0m
+[1;31mE (943949) task_wdt: CPU 0: monitor[0m
+[1;31mE (943949) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (943949) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D2C:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (943949) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+Check Antenna/Environment.
+[1;31mE (949019) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (949019) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (949019) task_wdt: Tasks currently running:[0m
+[1;31mE (949019) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (949019) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (949019) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (949019) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (954019) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (959019) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (959019) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (959019) task_wdt: Tasks currently running:[0m
+[1;31mE (959019) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (959019) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (959019) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (959019) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (964019) SAFE_SCANNER: WARNING: No BLE packets received in last 10s.E (964019) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (964019) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (964019) task_wdt: Tasks currently running:[0m
+[1;31mE (964019) task_wdt: CPU 0: monitor[0m
+[1;31mE (964019) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (964019) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D2C:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (964019) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+Check Antenna/Environment.
+[1;31mE (969089) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (969089) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (969089) task_wdt: Tasks currently running:[0m
+[1;31mE (969089) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (969089) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (969089) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (969089) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (974089) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (979089) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (979089) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (979089) task_wdt: Tasks currently running:[0m
+[1;31mE (979089) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (979089) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (979089) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (979089) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (984089) SAFE_SCANNER: WARNING: No BLE packets received in last 10s.E (984089) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (984089) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (984089) task_wdt: Tasks currently running:[0m
+[1;31mE (984089) task_wdt: CPU 0: monitor[0m
+[1;31mE (984089) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (984089) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D3D2C:0x3FFCB640 0x400D478E:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (984089) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+Check Antenna/Environment.
+[1;31mE (989159) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (989159) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (989159) task_wdt: Tasks currently running:[0m
+[1;31mE (989159) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (989159) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (989159) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (989159) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (994159) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (999159) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (999159) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (999159) task_wdt: Tasks currently running:[0m
+[1;31mE (999159) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (999159) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (999159) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (999159) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (1004159) SAFE_SCANNER: WARNING: No BLE packets received in last 1E (1004159) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (1004159) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (1004159) task_wdt: Tasks currently running:[0m
+[1;31mE (1004159) task_wdt: CPU 0: monitor[0m
+[1;31mE (1004159) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (1004159) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D477D:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (1004159) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+0s. Check Antenna/Environment.
+[1;31mE (1009229) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (1009229) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (1009229) task_wdt: Tasks currently running:[0m
+[1;31mE (1009229) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (1009229) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (1009229) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (1009229) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (1014229) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (1019229) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (1019229) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (1019229) task_wdt: Tasks currently running:[0m
+[1;31mE (1019229) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (1019229) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (1019229) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (1019229) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (1024229) SAFE_SCANNER: WARNING: No BLE packets received in last 1E (1024229) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (1024229) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (1024229) task_wdt: Tasks currently running:[0m
+[1;31mE (1024229) task_wdt: CPU 0: monitor[0m
+[1;31mE (1024229) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (1024229) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D477D:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (1024229) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+0s. Check Antenna/Environment.
+[1;31mE (1029299) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (1029299) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (1029299) task_wdt: Tasks currently running:[0m
+[1;31mE (1029299) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (1029299) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (1029299) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (1029299) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (1034299) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (1039299) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (1039299) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (1039299) task_wdt: Tasks currently running:[0m
+[1;31mE (1039299) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (1039299) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (1039299) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (1039299) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (1044299) SAFE_SCANNER: WARNING: No BLE packets received in last 1E (1044299) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (1044299) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (1044299) task_wdt: Tasks currently running:[0m
+[1;31mE (1044299) task_wdt: CPU 0: monitor[0m
+[1;31mE (1044299) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (1044299) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D477D:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (1044299) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+0s. Check Antenna/Environment.
+[1;31mE (1049369) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (1049369) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (1049369) task_wdt: Tasks currently running:[0m
+[1;31mE (1049369) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (1049369) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (1049369) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (1049369) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (1054369) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (1059369) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (1059369) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (1059369) task_wdt: Tasks currently running:[0m
+[1;31mE (1059369) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (1059369) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (1059369) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (1059369) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (1064369) SAFE_SCANNER: WARNING: No BLE packets received in last 1E (1064369) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (1064369) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (1064369) task_wdt: Tasks currently running:[0m
+[1;31mE (1064369) task_wdt: CPU 0: monitor[0m
+[1;31mE (1064369) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (1064369) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D477D:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (1064369) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+0s. Check Antenna/Environment.
+[1;31mE (1069439) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (1069439) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (1069439) task_wdt: Tasks currently running:[0m
+[1;31mE (1069439) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (1069439) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (1069439) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (1069439) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (1074439) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (1079439) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (1079439) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (1079439) task_wdt: Tasks currently running:[0m
+[1;31mE (1079439) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (1079439) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (1079439) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (1079439) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (1084439) SAFE_SCANNER: WARNING: No BLE packets received in last 1E (1084439) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (1084439) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (1084439) task_wdt: Tasks currently running:[0m
+[1;31mE (1084439) task_wdt: CPU 0: monitor[0m
+[1;31mE (1084439) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (1084439) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D477D:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (1084439) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+0s. Check Antenna/Environment.
+[1;31mE (1089509) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (1089509) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (1089509) task_wdt: Tasks currently running:[0m
+[1;31mE (1089509) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (1089509) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (1089509) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (1089509) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (1094509) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (1099509) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (1099509) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (1099509) task_wdt: Tasks currently running:[0m
+[1;31mE (1099509) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (1099509) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (1099509) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (1099509) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (1104509) SAFE_SCANNER: WARNING: No BLE packets received in last 1E (1104509) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (1104509) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (1104509) task_wdt: Tasks currently running:[0m
+[1;31mE (1104509) task_wdt: CPU 0: monitor[0m
+[1;31mE (1104509) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (1104509) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D477D:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (1104509) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+0s. Check Antenna/Environment.
+[1;31mE (1109579) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (1109579) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (1109579) task_wdt: Tasks currently running:[0m
+[1;31mE (1109579) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (1109579) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (1109579) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (1109579) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (1114579) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (1119579) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (1119579) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (1119579) task_wdt: Tasks currently running:[0m
+[1;31mE (1119579) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (1119579) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (1119579) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (1119579) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (1124579) SAFE_SCANNER: WARNING: No BLE packets received in last 1E (1124579) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (1124579) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (1124579) task_wdt: Tasks currently running:[0m
+[1;31mE (1124579) task_wdt: CPU 0: monitor[0m
+[1;31mE (1124579) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (1124579) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D477D:0x3FFCB670 0x400D5745:0x3FFCB6A0 0x4000BD83:0x3FFCB6C0 0x4000182A:0x3FFCB6E0 0x400D51ED:0x3FFCB700 0x400D5745:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (1124579) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+0s. Check Antenna/Environment.
+[1;31mE (1129649) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (1129649) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (1129649) task_wdt: Tasks currently running:[0m
+[1;31mE (1129649) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (1129649) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (1129649) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (1129649) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (1134649) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (1139649) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (1139649) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (1139649) task_wdt: Tasks currently running:[0m
+[1;31mE (1139649) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (1139649) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (1139649) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC280
+
+[1;31mE (1139649) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[1;31mE (1144649) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (1144649) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (1144649) task_wdt: Tasks currently running:[0m
+[1;31mE (1144649) task_wdt: CPU 0: monitor[0m
+[1;31mE (1144649) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (1144649) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x400D572B:0x3FFCB720 0x4000BD83:0x3FFCB740 0x4000117D:0x3FFCB760 0x400592FE:0x3FFCB780 0x4005937A:0x3FFCB7A0 0x40109489:0x3FFCB7C0 0x401107CF:0x3FFCB7F0 0x401101E6:0x3FFCB810 0x40109775:0x3FFCBB30 0x4009282A:0x3FFCBB60 0x400D61C9:0x3FFCBBC0
+
+[1;31mE (1144649) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x400838B7:0x3FFBF380 0x40082AFD:0x3FFBF3A0 0x4008C687:0x3FFBC840 0x401184D9:0x3FFBC860 0x4008EFBF:0x3FFBC880
+
+[0;33mW (1144649) SAFE_SCANNER: WARNING: No BLE packets received in last 10s. Check Antenna/Environment.[0m
+[1;31mE (1149709) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (1149709) task_wdt:  - monitor (CPU 0/1)[0m
+[1;31mE (1149709) task_wdt: Tasks currently running:[0m
+[1;31mE (1149709) task_wdt: CPU 0: IDLE0[0m
+[1;31mE (1149709) task_wdt: CPU 1: IDLE1[0m
+[1;31mE (1149709) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400E57D4:0x3FFBED70 0x40082AFD:0x3FFBEDA0 0x4008C687:0x3FFBC240 0x401184D9:0x3FFBC260 0x4008EFBF:0x3FFBC28

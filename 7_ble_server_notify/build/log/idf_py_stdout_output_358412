@@ -1,0 +1,41 @@
+Command: ninja all
+[1/10] Performing build step for 'bootloader'
+[1/1] cd /home/manager/Sync/ESP32-projects/ESP32_NimBLE_Curso/7_ble_server_notify/build/bootloader/esp-idf/esptool_py && /home/manager/.espressif/python_env/idf5.5_py3.13_env/bin/python /home/manager/esp/v5.5.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/manager/Sync/ESP32-projects/ESP32_NimBLE_Curso/7_ble_server_notify/build/bootloader/bootloader.bin
+Bootloader binary size 0x6680 bytes. 0x980 bytes (8%) free.
+[2/10] No install step for 'bootloader'
+[3/10] Completed 'bootloader'
+[4/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+In file included from /home/manager/esp/v5.5.1/esp-idf/components/bt/host/nimble/nimble/nimble/host/include/host/ble_hs_adv.h:24,
+                 from /home/manager/esp/v5.5.1/esp-idf/components/bt/host/nimble/nimble/nimble/host/include/host/ble_gap.h:32,
+                 from /home/manager/esp/v5.5.1/esp-idf/components/bt/host/nimble/nimble/nimble/host/include/host/ble_hs.h:33,
+                 from /home/manager/Sync/ESP32-projects/ESP32_NimBLE_Curso/7_ble_server_notify/main/main.c:26:
+/home/manager/Sync/ESP32-projects/ESP32_NimBLE_Curso/7_ble_server_notify/main/main.c:50:94: warning: excess elements in array initializer
+   50 | static ble_uuid128_t gatt_svr_chr_notify_uuid = GATT_SVR_CHR_UUID128(GATT_SVR_CHR_UUID_BASE, 0x0003);
+      |                                                                                              ^~~~~~
+/home/manager/esp/v5.5.1/esp-idf/components/bt/host/nimble/nimble/nimble/host/include/host/ble_uuid.h:138:20: note: in definition of macro 'BLE_UUID128_INIT'
+  138 |         .value = { uuid128 },           \
+      |                    ^~~~~~~
+/home/manager/Sync/ESP32-projects/ESP32_NimBLE_Curso/7_ble_server_notify/main/main.c:50:49: note: in expansion of macro 'GATT_SVR_CHR_UUID128'
+   50 | static ble_uuid128_t gatt_svr_chr_notify_uuid = GATT_SVR_CHR_UUID128(GATT_SVR_CHR_UUID_BASE, 0x0003);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~
+/home/manager/Sync/ESP32-projects/ESP32_NimBLE_Curso/7_ble_server_notify/main/main.c:50:94: note: (near initialization for '(anonymous).value')
+   50 | static ble_uuid128_t gatt_svr_chr_notify_uuid = GATT_SVR_CHR_UUID128(GATT_SVR_CHR_UUID_BASE, 0x0003);
+      |                                                                                              ^~~~~~
+/home/manager/esp/v5.5.1/esp-idf/components/bt/host/nimble/nimble/nimble/host/include/host/ble_uuid.h:138:20: note: in definition of macro 'BLE_UUID128_INIT'
+  138 |         .value = { uuid128 },           \
+      |                    ^~~~~~~
+/home/manager/Sync/ESP32-projects/ESP32_NimBLE_Curso/7_ble_server_notify/main/main.c:50:49: note: in expansion of macro 'GATT_SVR_CHR_UUID128'
+   50 | static ble_uuid128_t gatt_svr_chr_notify_uuid = GATT_SVR_CHR_UUID128(GATT_SVR_CHR_UUID_BASE, 0x0003);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~
+[5/10] Linking C static library esp-idf/main/libmain.a
+[6/10] Generating esp-idf/esp_system/ld/sections.ld
+[7/10] Building C object CMakeFiles/7_ble_server_notify.elf.dir/project_elf_src_esp32.c.obj
+[8/10] Linking CXX executable 7_ble_server_notify.elf
+[9/10] Generating binary image from built executable
+esptool.py v4.11.dev1
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated /home/manager/Sync/ESP32-projects/ESP32_NimBLE_Curso/7_ble_server_notify/build/7_ble_server_notify.bin
+[10/10] cd /home/manager/Sync/ESP32-projects/ESP32_NimBLE_Curso/7_ble_server_notify/build/esp-idf/esptool_py && /home/manager/.espressif/python_env/idf5.5_py3.13_env/bin/python /home/manager/esp/v5.5.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/manager/Sync/ESP32-projects/ESP32_NimBLE_Curso/7_ble_server_notify/build/partition_table/partition-table.bin /home/manager/Sync/ESP32-projects/ESP32_NimBLE_Curso/7_ble_server_notify/build/7_ble_server_notify.bin
+7_ble_server_notify.bin binary size 0x7fc40 bytes. Smallest app partition is 0x100000 bytes. 0x803c0 bytes (50%) free.
