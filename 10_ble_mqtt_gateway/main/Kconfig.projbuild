@@ -26,7 +26,7 @@ menu "Gateway Configuration"
 
     config GATEWAY_MQTT_PASSWORD
         string "MQTT Password"
-        default "@Roger1234"
+        default "@Roger1357"
         help
             Contraseña para autenticación MQTT.
 

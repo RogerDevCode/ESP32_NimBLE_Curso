@@ -26,14 +26,16 @@
 #include "esp_tls.h"  // Added for TLS support
 #include "esp_crt_bundle.h" // <--- OBLIGATORIO PARA HIVEMQ CLOUD
 
-/* --- CONFIGURACIÓN (Vía Kconfig) --- */
-#define WIFI_SSID       CONFIG_GATEWAY_WIFI_SSID
-#define WIFI_PASS       CONFIG_GATEWAY_WIFI_PASS
-#define MQTT_BROKER_URI CONFIG_GATEWAY_MQTT_URL
-#define MQTT_USERNAME    CONFIG_GATEWAY_MQTT_USERNAME
-#define MQTT_PASSWORD    CONFIG_GATEWAY_MQTT_PASSWORD
-#define MQTT_TOPIC_BEACON CONFIG_GATEWAY_MQTT_TOPIC_BEACON
-#define MQTT_TOPIC_COUNTER CONFIG_GATEWAY_MQTT_TOPIC_COUNTER
+/* --- CONFIGURACIÓN (Vía NVS) --- */
+// Global buffers for runtime configuration
+static char WIFI_SSID[33] = {0};
+static char WIFI_PASS[65] = {0};
+static char MQTT_BROKER_URI[128] = {0};
+static char MQTT_USERNAME[64] = {0};
+static char MQTT_PASSWORD[64] = {0};
+static char MQTT_TOPIC_BEACON[64] = {0};
+static char MQTT_TOPIC_COUNTER[64] = {0};
+
 #define COUNTER_INTERVAL_MS CONFIG_GATEWAY_COUNTER_INTERVAL_MS
 
 /* --- TLS Certificate --- */
@@ -41,6 +43,41 @@ extern const uint8_t hivemq_cloud_cert_pem_start[]   asm("_binary_hivemq_cloud_c
 extern const uint8_t hivemq_cloud_cert_pem_end[]     asm("_binary_hivemq_cloud_cert_pem_end");
 
 static const char *TAG = "GATEWAY_PRO";
+
+/* --- NVS CONFIG LOAD --- */
+static void load_config_from_nvs(void)
+{
+    nvs_handle_t my_handle;
+    esp_err_t err = nvs_open("gateway_config", NVS_READONLY, &my_handle);
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "💥 [NVS] Error opening NVS handle! (%s)", esp_err_to_name(err));
+        ESP_LOGE(TAG, "💥 [NVS] Did you provision the device?");
+        // Safety Halt: Cannot proceed without config
+        while(1) { vTaskDelay(1000 / portTICK_PERIOD_MS); }
+    }
+
+    size_t required_size;
+
+    // Helper macro for reading string
+    #define READ_NVS_STR(key, buffer) \
+        required_size = sizeof(buffer); \
+        err = nvs_get_str(my_handle, key, buffer, &required_size); \
+        if (err == ESP_OK) { \
+            ESP_LOGI(TAG, "🔑 [NVS] Loaded %s: %s", key, buffer); \
+        } else { \
+            ESP_LOGE(TAG, "💥 [NVS] Failed to load %s (%s)", key, esp_err_to_name(err)); \
+        }
+
+    READ_NVS_STR("wifi_ssid", WIFI_SSID);
+    READ_NVS_STR("wifi_pass", WIFI_PASS);
+    READ_NVS_STR("mqtt_url", MQTT_BROKER_URI);
+    READ_NVS_STR("mqtt_user", MQTT_USERNAME);
+    READ_NVS_STR("mqtt_pass", MQTT_PASSWORD);
+    READ_NVS_STR("mqtt_topic_b", MQTT_TOPIC_BEACON);
+    READ_NVS_STR("mqtt_topic_c", MQTT_TOPIC_COUNTER);
+
+    nvs_close(my_handle);
+}
 
 /* --- FREERTOS OBJECTS --- */
 static EventGroupHandle_t s_wifi_event_group;
@@ -78,14 +115,15 @@ static void wifi_event_handler(void* arg, esp_event_base_t event_base,
         ESP_LOGW(TAG, "📡 [WIFI-DISCONNECTED] SSID: %.32s, RSSI: %d", disconnected->ssid, disconnected->rssi);
         ESP_LOGW(TAG, "📡 [WIFI-DISCONNECTED] Retry count: %d/10", retry_num);
 
-        // Exponential Backoff simple (Capped at 60s)
-        if (retry_num < 20) { // Limit retry increment
+        // Exponential Backoff: Start at 5s, max 60s
+        if (retry_num < 10) {
              retry_num++;
         }
-        int delay_ms = (1 << (retry_num < 6 ? retry_num : 6)) * 1000; // 2s...64s
+        // Base 5s. Shift: 0->5s, 1->10s, 2->20s, 3->40s, 4+->60s
+        int delay_ms = 5000 * (1 << (retry_num > 0 ? retry_num - 1 : 0)); 
         if (delay_ms > 60000) delay_ms = 60000;
         
-        ESP_LOGW(TAG, "🔄 [WIFI-RETRY] WiFi desconectado. Reintentando en %d ms...", delay_ms);
+        ESP_LOGW(TAG, "🔄 [WIFI-RETRY] WiFi desconectado (Intento %d). Reintentando en %d ms...", retry_num, delay_ms);
         vTaskDelay(pdMS_TO_TICKS(delay_ms));
         esp_wifi_connect();
 
@@ -176,15 +214,18 @@ void wifi_init_sta(void)
 
     wifi_config_t wifi_config = {
         .sta = {
-            .ssid = WIFI_SSID,
-            .password = WIFI_PASS,
-            .threshold.authmode = WIFI_AUTH_WPA3_PSK,  // Soporte para WPA3
+            .threshold.authmode = WIFI_AUTH_WPA2_PSK,
             .pmf_cfg = {
                 .capable = true,
                 .required = false
             },
         },
     };
+
+    // Copy from NVS buffers to WiFi Config
+    memcpy(wifi_config.sta.ssid, WIFI_SSID, sizeof(wifi_config.sta.ssid));
+    memcpy(wifi_config.sta.password, WIFI_PASS, sizeof(wifi_config.sta.password));
+
     ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA));
     ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, &wifi_config));
     ESP_ERROR_CHECK(esp_wifi_start());
@@ -404,64 +445,71 @@ static void heartbeat_counter_task(void *pvParameters)
 {
     ESP_LOGI(TAG, "💗 [HEARTBEAT] Heartbeat Counter Task iniciada. Intervalo: %d ms", COUNTER_INTERVAL_MS);
 
-    esp_task_wdt_add(NULL); // STRICT: Add task to WDT before entering loop
+    esp_task_wdt_add(NULL); // STRICT: Add task to WDT
 
     uint32_t counter = 0;
     char counter_json[256];
+    uint32_t accumulated_ms = 0;
+    const uint32_t WAKE_INTERVAL_MS = 1000; // Wake up every 1s to feed dog
 
     for (;;) {
-        vTaskDelay(pdMS_TO_TICKS(COUNTER_INTERVAL_MS));
-
-        // Check WiFi and MQTT status
-        EventBits_t wifi_bits = xEventGroupGetBits(s_wifi_event_group);
-        bool wifi_connected = (wifi_bits & WIFI_CONNECTED_BIT);
-
-        ESP_LOGI(TAG, "🔍 [HEARTBEAT] Counter #%lu - WiFi: %s, MQTT Client: %s",
-                 counter + 1,
-                 wifi_connected ? "CONNECTED ✅" : "DISCONNECTED ❌",
-                 (mqtt_client != NULL) ? "EXISTS ✅" : "NULL ❌");
-
-        if (wifi_connected && mqtt_client != NULL) {
-            counter++;
-
-            // Crear JSON para el contador
-            snprintf(counter_json, sizeof(counter_json),
-                     "{"
-                     "\"counter\": %lu,"
-                     "\"timestamp\": %lld,"
-                     "\"device_id\": \"%s\","
-                     "\"status\": \"online\","
-                     "\"wifi_ssid\": \"%s\","
-                     "\"rssi\": 0"
-                     "}",
-                     counter,
-                     esp_timer_get_time() / 1000000,
-                     MQTT_USERNAME,
-                     WIFI_SSID
-            );
-
-            ESP_LOGI(TAG, "📤 [HEARTBEAT] Publishing heartbeat #%lu to topic: %s", counter, MQTT_TOPIC_COUNTER);
-            ESP_LOGI(TAG, "📝 [HEARTBEAT] Payload: %s", counter_json);
-
-            int msg_id = esp_mqtt_client_publish(mqtt_client,
-                                               MQTT_TOPIC_COUNTER,
-                                               counter_json,
-                                               strlen(counter_json),
-                                               1,  // QoS 1
-                                               0); // Retain 0
-
-            if (msg_id != -1) {
-                ESP_LOGI(TAG, "✅ [HEARTBEAT] Heartbeat #%lu QUEUED to %s (msg_id=%d)",
-                        counter, MQTT_TOPIC_COUNTER, msg_id);
-            } else {
-                ESP_LOGE(TAG, "❌ [HEARTBEAT] Error queueing heartbeat #%lu - esp_mqtt_client_publish failed", counter);
-            }
-        } else {
-            ESP_LOGW(TAG, "⏸️ [HEARTBEAT] WiFi/MQTT no disponible, skipping heartbeat #%lu", counter + 1);
-        }
-
-        // Resetear watchdog
+        // Feed the dog frequently
         esp_task_wdt_reset();
+        
+        vTaskDelay(pdMS_TO_TICKS(WAKE_INTERVAL_MS));
+        accumulated_ms += WAKE_INTERVAL_MS;
+
+        if (accumulated_ms >= COUNTER_INTERVAL_MS) {
+            accumulated_ms = 0; // Reset timer
+
+            // Check WiFi and MQTT status
+            EventBits_t wifi_bits = xEventGroupGetBits(s_wifi_event_group);
+            bool wifi_connected = (wifi_bits & WIFI_CONNECTED_BIT);
+
+            ESP_LOGI(TAG, "🔍 [HEARTBEAT] Counter #%lu - WiFi: %s, MQTT Client: %s",
+                     counter + 1,
+                     wifi_connected ? "CONNECTED ✅" : "DISCONNECTED ❌",
+                     (mqtt_client != NULL) ? "EXISTS ✅" : "NULL ❌");
+
+            if (wifi_connected && mqtt_client != NULL) {
+                counter++;
+
+                // Crear JSON para el contador
+                snprintf(counter_json, sizeof(counter_json),
+                         "{"
+                         "\"counter\": %lu,"
+                         "\"timestamp\": %lld,"
+                         "\"device_id\": \"%s\","
+                         "\"status\": \"online\","
+                         "\"wifi_ssid\": \"%s\","
+                         "\"rssi\": 0"
+                         "}",
+                         counter,
+                         esp_timer_get_time() / 1000000,
+                         MQTT_USERNAME,
+                         WIFI_SSID
+                );
+
+                ESP_LOGI(TAG, "📤 [HEARTBEAT] Publishing heartbeat #%lu to topic: %s", counter, MQTT_TOPIC_COUNTER);
+                ESP_LOGI(TAG, "📝 [HEARTBEAT] Payload: %s", counter_json);
+
+                int msg_id = esp_mqtt_client_publish(mqtt_client,
+                                                   MQTT_TOPIC_COUNTER,
+                                                   counter_json,
+                                                   strlen(counter_json),
+                                                   1,  // QoS 1
+                                                   0); // Retain 0
+
+                if (msg_id != -1) {
+                    ESP_LOGI(TAG, "✅ [HEARTBEAT] Heartbeat #%lu QUEUED to %s (msg_id=%d)",
+                            counter, MQTT_TOPIC_COUNTER, msg_id);
+                } else {
+                    ESP_LOGE(TAG, "❌ [HEARTBEAT] Error queueing heartbeat #%lu - esp_mqtt_client_publish failed", counter);
+                }
+            } else {
+                ESP_LOGW(TAG, "⏸️ [HEARTBEAT] WiFi/MQTT no disponible, skipping heartbeat #%lu", counter + 1);
+            }
+        }
     }
 }
 
@@ -474,6 +522,9 @@ void app_main(void)
         ret = nvs_flash_init();
     }
     ESP_ERROR_CHECK(ret);
+
+    // 1.1 Load Configuration from NVS
+    load_config_from_nvs();
 
     // 2. Crear Cola de Eventos
     // Capacidad para 20 eventos (Aumentado para robustez)
