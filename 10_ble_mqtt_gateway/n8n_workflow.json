@@ -1,0 +1,102 @@
+{
+  "name": "IoT Gateway Processor (Edge Batching)",
+  "nodes": [
+    {
+      "parameters": {
+        "topics": "esp32/gateway/batch",
+        "outputFormat": "json"
+      },
+      "id": "mqtt-trigger",
+      "name": "MQTT Batch Source",
+      "type": "n8n-nodes-base.mqttTrigger",
+      "typeVersion": 1,
+      "position": [
+        460,
+        300
+      ],
+      "credentials": {
+        "mqtt": {
+          "id": "YOUR_MQTT_CREDENTIALS_ID",
+          "name": "Mosquitto Public"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "devices"
+      },
+      "id": "split-batch",
+      "name": "Split Batch",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 1,
+      "position": [
+        680,
+        300
+      ],
+      "notes": "Desempaqueta el array 'devices' en items individuales para procesar."
+    },
+    {
+      "parameters": {
+        "jsCode": "// Validación y Enriquecimiento\n// Ahora el payload ya viene limpio del ESP32\nconst device = items[0].json;\nconst gateway_info = items[0].binary ? {} : {}; // Contexto si fuera necesario\n\n// Estimación de distancia con RSSI promedio\nconst txPower = -59;\nconst n = 2;\n// Usamos 'avg_rssi' calculado en el borde\nconst distance = Math.pow(10, (txPower - device.avg_rssi) / (10 * n));\n\nreturn {\n  json: {\n    mac: device.mac,\n    name: device.name || 'Unknown',\n    rssi: device.avg_rssi,\n    samples: device.count,\n    distance_m: parseFloat(distance.toFixed(2)),\n    status: device.avg_rssi > -70 ? 'Cerca' : 'Lejos',\n    processed_at: new Date().toISOString()\n  }\n};"
+      },
+      "id": "process-item",
+      "name": "Process Item",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        900,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "toJson",
+        "options": {}
+      },
+      "id": "db-prep",
+      "name": "Prepare DB Insert",
+      "type": "n8n-nodes-base.spreadsheetFile",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        300
+      ],
+      "notes": "Simulacion. Aquí iría tu nodo de Postgres/InfluxDB"
+    }
+  ],
+  "connections": {
+    "MQTT Batch Source": {
+      "main": [
+        [
+          {
+            "node": "Split Batch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Batch": {
+      "main": [
+        [
+          {
+            "node": "Process Item",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Process Item": {
+      "main": [
+        [
+          {
+            "node": "Prepare DB Insert",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

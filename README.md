@@ -75,4 +75,8 @@ A diferencia de ejemplos básicos, los proyectos avanzados de este repositorio (
 
 ---
 
+<<<<<<< HEAD
 > **Nota:** Este código es material educativo profesional. Úsalo como base para tus propios productos, pero recuerda siempre realizar auditorías de seguridad antes de desplegar en entornos comerciales.
+=======
+> **Nota:** Este código es material educativo profesional. Úsalo como base para tus propios productos, pero recuerda siempre realizar auditorías de seguridad antes de desplegar en entornos comerciales.
+>>>>>>> master

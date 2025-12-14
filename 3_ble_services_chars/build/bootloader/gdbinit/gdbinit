@@ -1,0 +1,2 @@
+source /home/manager/Sync/ESP32-projects/ESP32_NimBLE_Curso/3_ble_services_chars/build/bootloader/gdbinit/symbols
+source /home/manager/Sync/ESP32-projects/ESP32_NimBLE_Curso/3_ble_services_chars/build/bootloader/gdbinit/connect

@@ -1,0 +1,118 @@
+Command: /home/manager/.espressif/python_env/idf5.5_py3.13_env/bin/python /home/manager/esp/v5.5.1/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/manager/Sync/ESP32-projects/ESP32_NimBLE_Curso/8_ble_beacon_scanner/build/ble_safety_scanner.elf /home/manager/Sync/ESP32-projects/ESP32_NimBLE_Curso/8_ble_beacon_scanner/build/bootloader/bootloader.elf -m '/home/manager/.espressif/python_env/idf5.5_py3.13_env/bin/python' '/home/manager/esp/v5.5.1/esp-idf/tools/idf.py' '-p' '/dev/ttyUSB0'
+[0;33m--- esp-idf-monitor 1.8.0 on /dev/ttyUSB0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x400eb67e: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400eba91: [0;33mtask_wdt_isr[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083699: [0;33m_xt_lowint1[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x4000d2d6: [0;33m__umoddi3[0m[0m in [0;32mROM[0m
+[0m--- 0x40118855: [0;33m_vfprintf_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m1591[0m
+[0m--- 0x40112eb9: [0;33mvprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c[0m[0m:[1;31m34[0m
+[0m--- 0x400950f5: [0;33mesp_log_va[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/log/src/log.c[0m[0m:[1;31m43[0m
+[0m--- (inlined by) [0;33mesp_log[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/log/src/log.c[0m[0m:[1;31m88[0m
+[0m--- 0x400d7abd: [0;33mmonitor_task[0m[0m at [0;32m/home/manager/Sync/ESP32-projects/ESP32_NimBLE_Curso/8_ble_beacon_scanner/main/main.c[0m[0m:[1;31m179[0m
+[0m--- 0x4008fbd5: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084866: [0;33mesp_crosscore_isr[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083699: [0;33m_xt_lowint1[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x4008d70f: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x401224fa: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4009099d: [0;33mprvIdleTask[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008fbd5: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400eb67e: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400eba91: [0;33mtask_wdt_isr[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083699: [0;33m_xt_lowint1[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40116a2f: [0;33m_vfprintf_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m911[0m
+[0m--- 0x40112eb9: [0;33mvprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c[0m[0m:[1;31m34[0m
+[0m--- 0x400950f5: [0;33mesp_log_va[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/log/src/log.c[0m[0m:[1;31m43[0m
+[0m--- (inlined by) [0;33mesp_log[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/log/src/log.c[0m[0m:[1;31m88[0m
+[0m--- 0x400d7abd: [0;33mmonitor_task[0m[0m at [0;32m/home/manager/Sync/ESP32-projects/ESP32_NimBLE_Curso/8_ble_beacon_scanner/main/main.c[0m[0m:[1;31m179[0m
+[0m--- 0x4008fbd5: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084866: [0;33mesp_crosscore_isr[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083699: [0;33m_xt_lowint1[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x4008d70f: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x401224fa: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4009099d: [0;33mprvIdleTask[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008fbd5: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400eb67e: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400eba91: [0;33mtask_wdt_isr[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083699: [0;33m_xt_lowint1[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40116a2f: [0;33m_vfprintf_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m911[0m
+[0m--- 0x40112eb9: [0;33mvprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c[0m[0m:[1;31m34[0m
+[0m--- 0x400950f5: [0;33mesp_log_va[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/log/src/log.c[0m[0m:[1;31m43[0m
+[0m--- (inlined by) [0;33mesp_log[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/log/src/log.c[0m[0m:[1;31m88[0m
+[0m--- 0x400d7abd: [0;33mmonitor_task[0m[0m at [0;32m/home/manager/Sync/ESP32-projects/ESP32_NimBLE_Curso/8_ble_beacon_scanner/main/main.c[0m[0m:[1;31m179[0m
+[0m--- 0x4008fbd5: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084866: [0;33mesp_crosscore_isr[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083699: [0;33m_xt_lowint1[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x4008d70f: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x401224fa: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4009099d: [0;33mprvIdleTask[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008fbd5: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400eb67e: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400eba91: [0;33mtask_wdt_isr[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083699: [0;33m_xt_lowint1[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40116a2f: [0;33m_vfprintf_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m911[0m
+[0m--- 0x40112eb9: [0;33mvprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c[0m[0m:[1;31m34[0m
+[0m--- 0x400950f5: [0;33mesp_log_va[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/log/src/log.c[0m[0m:[1;31m43[0m
+[0m--- (inlined by) [0;33mesp_log[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/log/src/log.c[0m[0m:[1;31m88[0m
+[0m--- 0x400d7abd: [0;33mmonitor_task[0m[0m at [0;32m/home/manager/Sync/ESP32-projects/ESP32_NimBLE_Curso/8_ble_beacon_scanner/main/main.c[0m[0m:[1;31m179[0m
+[0m--- 0x4008fbd5: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084866: [0;33mesp_crosscore_isr[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083699: [0;33m_xt_lowint1[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x4008d70f: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x401224fa: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4009099d: [0;33mprvIdleTask[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008fbd5: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400eb67e: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400eba91: [0;33mtask_wdt_isr[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083699: [0;33m_xt_lowint1[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40116a2f: [0;33m_vfprintf_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m911[0m
+[0m--- 0x40112eb9: [0;33mvprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c[0m[0m:[1;31m34[0m
+[0m--- 0x400950f5: [0;33mesp_log_va[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/log/src/log.c[0m[0m:[1;31m43[0m
+[0m--- (inlined by) [0;33mesp_log[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/log/src/log.c[0m[0m:[1;31m88[0m
+[0m--- 0x400d7abd: [0;33mmonitor_task[0m[0m at [0;32m/home/manager/Sync/ESP32-projects/ESP32_NimBLE_Curso/8_ble_beacon_scanner/main/main.c[0m[0m:[1;31m179[0m
+[0m--- 0x4008fbd5: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084866: [0;33mesp_crosscore_isr[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083699: [0;33m_xt_lowint1[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x4008d70f: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x401224fa: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4009099d: [0;33mprvIdleTask[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008fbd5: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400eb67e: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x400eba91: [0;33mtask_wdt_isr[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40083699: [0;33m_xt_lowint1[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40118832: [0;33m_vfprintf_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m1584[0m
+[0m--- 0x40112eb9: [0;33mvprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c[0m[0m:[1;31m34[0m
+[0m--- 0x400950f5: [0;33mesp_log_va[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/log/src/log.c[0m[0m:[1;31m43[0m
+[0m--- (inlined by) [0;33mesp_log[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/log/src/log.c[0m[0m:[1;31m88[0m
+[0m--- 0x400d7abd: [0;33mmonitor_task[0m[0m at [0;32m/home/manager/Sync/ESP32-projects/ESP32_NimBLE_Curso/8_ble_beacon_scanner/main/main.c[0m[0m:[1;31m179[0m
+[0m--- 0x4008fbd5: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084866: [0;33mesp_crosscore_isr[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083699: [0;33m_xt_lowint1[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x4008d70f: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x401224fa: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/esp_system/freertos_hooks.c[0m[0m:[1;31m58[0m
+[0m--- 0x4009099d: [0;33mprvIdleTask[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008fbd5: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x400eb67e: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m435[0m
+[0m--- 0x400eba91: [0;33mtask_wdt_isr[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m508[0m
+[0m--- 0x40083699: [0;33m_xt_lowint1[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40116a2f: [0;33m_vfprintf_r[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c[0m[0m:[1;31m1641[0m
+[0m--- 0x40112eb9: [0;33mvprintf[0m[0m at [0;32m/builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c[0m[0m:[1;31m30[0m
+[0m--- 0x400950f5: [0;33mesp_log_va[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/log/src/log.c[0m[0m:[1;31m43[0m
+[0m--- (inlined by) [0;33mesp_log[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/log/src/log.c[0m[0m:[1;31m88[0m
+[0m--- 0x400d7abd: [0;33mmonitor_task[0m[0m at [0;32m/home/manager/Sync/ESP32-projects/ESP32_NimBLE_Curso/8_ble_beacon_scanner/main/main.c[0m[0m:[1;31m185[0m
+[0m--- 0x4008fbd5: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40084866: [0;33mesp_crosscore_isr[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40083699: [0;33m_xt_lowint1[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x4008d70f: [0;33mxt_utils_wait_for_intr[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/xtensa/include/xt_utils.h[0m[0m:[1;31m82[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m55[0m
+[0m--- 0x401224fa: [0;33mesp_vApplicationIdleHook[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/esp_system/freertos_hooks.c[0m[0m:[1;31m46[0m
+[0m--- 0x4009099d: [0;33mprvIdleTask[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c[0m[0m:[1;31m4350[0m
+[0m--- 0x4008fbd5: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/manager/esp/v5.5.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m

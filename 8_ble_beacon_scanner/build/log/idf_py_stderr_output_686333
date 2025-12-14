@@ -1,0 +1,2 @@
+Command: ninja all
+warning: the value '24CONFIG_BT_NIMBLE_NVS_PERSIST=n' is invalid for BT_NIMBLE_MSYS_1_BLOCK_COUNT (defined at /home/manager/esp/v5.5.1/esp-idf/components/bt/host/nimble/Kconfig.in:314), which has type int -- assignment ignored

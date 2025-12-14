@@ -1,0 +1,52 @@
+menu "Gateway Configuration"
+
+    config GATEWAY_WIFI_SSID
+        string "WiFi SSID"
+        default "Iamtitanium"
+        help
+            Nombre de la red WiFi a la que conectarse.
+
+    config GATEWAY_WIFI_PASS
+        string "WiFi Password"
+        default "@Roger1357"
+        help
+            Contraseña de la red WiFi.
+
+    config GATEWAY_MQTT_URL
+        string "MQTT Broker URL"
+        default "mqtts://53b39b4ca3d649d696d8126555721baf.s1.eu.hivemq.cloud:8883"
+        help
+            URL del Broker MQTT (ej: mqtt://ip:port o mqtts://dominio:port).
+
+    config GATEWAY_MQTT_USERNAME
+        string "MQTT Username"
+        default "roger-esp32"
+        help
+            Usuario para autenticación MQTT.
+
+    config GATEWAY_MQTT_PASSWORD
+        string "MQTT Password"
+        default "@Roger1234"
+        help
+            Contraseña para autenticación MQTT.
+
+    config GATEWAY_MQTT_TOPIC_BEACON
+        string "MQTT Topic for iBeacon Data"
+        default "/concepcion/esp32/ibeacon"
+        help
+            Tópico MQTT para enviar datos de iBeacon detectados.
+
+    config GATEWAY_MQTT_TOPIC_COUNTER
+        string "MQTT Topic for Heartbeat Counter"
+        default "/concepcion/esp32/contador"
+        help
+            Tópico MQTT para enviar el contador heartbeat.
+
+    config GATEWAY_COUNTER_INTERVAL_MS
+        int "Heartbeat Counter Interval (milliseconds)"
+        default 10000
+        range 1000 3600000
+        help
+            Intervalo en milisegundos para enviar el contador heartbeat.
+
+endmenu

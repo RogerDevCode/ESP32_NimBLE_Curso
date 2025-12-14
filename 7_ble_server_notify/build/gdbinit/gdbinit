@@ -1,0 +1,2 @@
+source /home/manager/Sync/ESP32-projects/ESP32_NimBLE_Curso/7_ble_server_notify/build/gdbinit/symbols
+source /home/manager/Sync/ESP32-projects/ESP32_NimBLE_Curso/7_ble_server_notify/build/gdbinit/connect
