@@ -1,2 +1,0 @@
-source /home/manager/Sync/ESP32-projects/ESP32_NimBLE_Curso/11_deep_sleep/build/bootloader/gdbinit/symbols
-source /home/manager/Sync/ESP32-projects/ESP32_NimBLE_Curso/11_deep_sleep/build/bootloader/gdbinit/connect

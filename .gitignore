@@ -1,19 +1,25 @@
 # ---------------------------------
-# 1. ESP-IDF Build System (CRITICO)
+# 1. ESP-IDF Build System (RECURSIVO)
 # ---------------------------------
-/build/
-/managed_components/
-/dependencies.lock
+# Al quitar la barra inicial, esto ignora 'build' dentro de CUALQUIER proyecto
+build/
+managed_components/
+dependencies.lock
 
 # ---------------------------------
 # 2. Configuración y Secretos (SEGURIDAD)
 # ---------------------------------
+# Ignora estos archivos en cualquier subcarpeta
 sdkconfig
 sdkconfig.old
 sdkconfig.ci
 sdkconfig.debug
 sdkconfig.release
+
+# Excepción: Mantener los defaults (donde sea que estén)
 !sdkconfig.defaults
+
+# Certificados y llaves (Protección global)
 *.pem
 *.key
 *.crt
@@ -39,6 +45,6 @@ __pycache__/
 # ---------------------------------
 # 5. Documentación y Logs
 # ---------------------------------
-/docs/_build/
+_build/
 core.*
 *.log

@@ -1,8 +1,0 @@
-Command: ninja all
-[1/4] cd /home/manager/Sync/ESP32-projects/ESP32_NimBLE_Curso/3_ble_services_chars/build/esp-idf/esptool_py && /home/manager/.espressif/python_env/idf5.5_py3.13_env/bin/python /home/manager/esp/v5.5.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/manager/Sync/ESP32-projects/ESP32_NimBLE_Curso/3_ble_services_chars/build/partition_table/partition-table.bin /home/manager/Sync/ESP32-projects/ESP32_NimBLE_Curso/3_ble_services_chars/build/3_ble_services_chars.bin
-3_ble_services_chars.bin binary size 0x7d2d0 bytes. Smallest app partition is 0x100000 bytes. 0x82d30 bytes (51%) free.
-[2/4] Performing build step for 'bootloader'
-[1/1] cd /home/manager/Sync/ESP32-projects/ESP32_NimBLE_Curso/3_ble_services_chars/build/bootloader/esp-idf/esptool_py && /home/manager/.espressif/python_env/idf5.5_py3.13_env/bin/python /home/manager/esp/v5.5.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/manager/Sync/ESP32-projects/ESP32_NimBLE_Curso/3_ble_services_chars/build/bootloader/bootloader.bin
-Bootloader binary size 0x6680 bytes. 0x980 bytes (8%) free.
-[3/4] No install step for 'bootloader'
-[4/4] Completed 'bootloader'
